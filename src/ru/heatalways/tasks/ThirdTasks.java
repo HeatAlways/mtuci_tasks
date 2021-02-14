@@ -170,9 +170,14 @@ public class ThirdTasks {
         else return str + "inator " + str.length() + "000";
     }
 
-    public static boolean doesBrickFit(int a, int b, int c, int w, int h) {
-        int holeSize = w * h;
-        return (a * b) <= holeSize || (b * c) <= holeSize || (c * a) <= holeSize;
+    public static boolean combo(int brickA, int brickB, int holeA, int holeB){
+        return  (holeA - brickA >= 0 && holeB - brickB >= 0) ||
+                (holeA - brickB >= 0 && holeB - brickA >= 0);
+    }
+    public static boolean doesBrickFit(int brickA, int brickB, int brickC, int holeA, int holeB){
+        return  combo(brickA, brickB, holeA, holeB) ||
+                combo(brickA, brickC, holeA, holeB) ||
+                combo(brickB, brickC, holeA, holeB);
     }
 
     public static double totalDistance(
