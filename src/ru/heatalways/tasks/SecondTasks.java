@@ -81,7 +81,7 @@ public class SecondTasks {
     }
 
     public static double discount(int price, int percent) {
-        return price * (percent / 100d);
+        return price - price * (percent / 100d);
     }
 
     public static int differenceMaxMin(int[] nums) {
