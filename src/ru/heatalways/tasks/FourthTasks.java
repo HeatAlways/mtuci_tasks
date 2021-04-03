@@ -128,7 +128,7 @@ public class FourthTasks {
     }
 
     public static String xPronounce(String str) {
-        String[] separatedStr = str.split(" ");
+        String[] separatedStr = str.toLowerCase().split(" ");
         for (int i = 0; i < separatedStr.length; i++) {
             if (separatedStr[i].equals("x")) separatedStr[i] = "ecks";
             if (separatedStr[i].startsWith("x")) {
